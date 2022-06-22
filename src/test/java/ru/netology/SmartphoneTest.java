@@ -9,69 +9,69 @@ class SmartphoneTest {
     private Smartphone smartphone2 = new Smartphone(1, "samsung a50", 50000, "samsung");
 
     @Test
-    public void testId() {
+    void testId() {
         assertEquals(1, smartphone.getId());
     }
 
     @Test
-    public void testName() {
+    void testName() {
         assertEquals("samsung a50", smartphone.getName());
     }
 
     @Test
-    public void testPrice() {
+    void testPrice() {
         assertEquals(50000, smartphone.getPrice());
     }
 
     @Test
-    public void testAuthor() {
+    void testAuthor() {
         assertEquals("samsung", smartphone.getManufacturer());
     }
 
 
     @Test
-    public void testEquals() {
+    void testEquals() {
         assertEquals(smartphone, smartphone2);
         assertTrue(smartphone.hashCode() == smartphone2.hashCode());
     }
 
     @Test
-    public void testEqualsOfAnotherId() {
+    void testEqualsOfAnotherId() {
         Smartphone smartphone2 = new Smartphone(2, "samsung a50", 50000, "samsung");
         assertNotEquals(smartphone, smartphone2);
     }
 
     @Test
-    public void testEqualsOfAnotherName() {
+    void testEqualsOfAnotherName() {
         Smartphone smartphone2 = new Smartphone(1, "samsung a30", 50000, "samsung");
         assertNotEquals(smartphone, smartphone2);
     }
 
     @Test
-    public void testEqualsOfAnotherPrice() {
+    void testEqualsOfAnotherPrice() {
         Smartphone smartphone2 = new Smartphone(1, "samsung a50", 30000, "samsung");
         assertNotEquals(smartphone, smartphone2);
     }
 
     @Test
-    public void testEqualsOfAnotherManufacturer() {
+    void testEqualsOfAnotherManufacturer() {
         Smartphone smartphone2 = new Smartphone(1, "samsung a50", 50000, "apple");
         assertNotEquals(smartphone, smartphone2);
     }
 
     @Test
-    public void testEqualsOfNull() {
+    void testEqualsOfNull() {
         assertNotEquals(smartphone, null);
     }
 
     @Test
-    public void testEqualsOfAnotherClass() {
+    void testEqualsOfAnotherClass() {
         Product product = new Product(1, "samsung a50", 50000);
         assertNotEquals(smartphone, product);
     }
 
     @Test
-    public void testEqualsOfSelf() {
+    void testEqualsOfSelf() {
         assertEquals(smartphone, smartphone);
     }
 

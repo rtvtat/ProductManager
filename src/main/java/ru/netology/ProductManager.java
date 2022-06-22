@@ -30,6 +30,7 @@ public class ProductManager {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
+                // "добавляем в конец" массива result продукт product
                 result = Arrays.copyOf(result, result.length + 1);
                 result[result.length - 1] = product;
             }

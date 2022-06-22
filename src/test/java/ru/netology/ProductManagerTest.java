@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ProductManagerTest {
     ProductManager manager1;
     ProductManager manager2;
+    ProductManager manager3;
 
     @BeforeEach
     public void setUp() {
@@ -21,6 +22,9 @@ class ProductManagerTest {
         manager1.add(new Smartphone(4, "iphone", 100000, "apple"));
 
         manager2 = new ProductManager(new ProductRepository());
+
+        manager3 = new ProductManager(new ProductRepository());
+        manager3.add(new Book(2, "Двенадцать стульев", 100, "Илья Ильф, Евгений Петров"));
     }
 
     @Test
@@ -51,6 +55,19 @@ class ProductManagerTest {
     @Test
     public void testSearch() {
         Product[] results = manager1.searchBy("Двенадцать");
+        assertEquals(1, results.length);
+        assertEquals("Двенадцать стульев", results[0].getName());
+    }
+
+    @Test
+    public void testSearchEmptyRepository() {
+        Product[] results = manager2.searchBy("Двенадцать");
+        assertEquals(0, results.length);
+    }
+
+    @Test
+    public void testSearchSingleRepository() {
+        Product[] results = manager3.searchBy("Двенадцать");
         assertEquals(1, results.length);
         assertEquals("Двенадцать стульев", results[0].getName());
     }
