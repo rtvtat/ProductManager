@@ -6,25 +6,25 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
     @Test
-    void testId() {
+    public void testId() {
         Product product = new Product(1, "product", 100);
         assertEquals(1, product.getId());
     }
 
     @Test
-    void testName() {
+    public void testName() {
         Product product = new Product(1, "product", 100);
         assertEquals("product", product.getName());
     }
 
     @Test
-    void testPrice() {
+    public void testPrice() {
         Product product = new Product(1, "product", 100);
         assertEquals(100, product.getPrice());
     }
 
     @Test
-    void testEquals() {
+    public void testEquals() {
         Product product1 = new Product(1, "product", 100);
         Product product2 = new Product(1, "product", 100);
         assertEquals(product1, product2);
@@ -32,41 +32,41 @@ class ProductTest {
     }
 
     @Test
-    void testEqualsOfAnotherId() {
+    public void testEqualsOfAnotherId() {
         Product product1 = new Product(1, "product", 100);
         Product product2 = new Product(2, "product", 100);
         assertNotEquals(product1, product2);
     }
 
     @Test
-    void testEqualsOfAnotherName() {
+    public void testEqualsOfAnotherName() {
         Product product1 = new Product(1, "product1", 100);
         Product product2 = new Product(1, "product2", 100);
         assertNotEquals(product1, product2);
     }
 
     @Test
-    void testEqualsOfAnotherPrice() {
+    public void testEqualsOfAnotherPrice() {
         Product product1 = new Product(1, "product", 100);
         Product product2 = new Product(1, "product", 200);
         assertNotEquals(product1, product2);
     }
 
     @Test
-    void testEqualsOfNull() {
+    public void testEqualsOfNull() {
         Product product1 = new Product(1, "product", 100);
         assertNotEquals(product1, null);
     }
 
     @Test
-    void testEqualsOfAnotherClass() {
+    public void testEqualsOfAnotherClass() {
         Product product1 = new Product(1, "product", 100);
         Object product2 = new Object();
         assertNotEquals(product1, product2);
     }
 
     @Test
-    void testEqualsOfSelf() {
+    public void testEqualsOfSelf() {
         Product product1 = new Product(1, "product", 100);
         assertEquals(product1, product1);
     }
